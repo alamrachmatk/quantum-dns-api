@@ -24,7 +24,7 @@ func NewRouter() *echo.Echo {
 	e.Use(middleware.Recover())
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:9527"},
+		AllowOrigins: []string{"http://175.106.13.24:9527/"},
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
 
