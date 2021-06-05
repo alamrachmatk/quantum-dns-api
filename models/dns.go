@@ -38,7 +38,7 @@ type TotalDnsDayList struct {
 }
 
 func GetAllDns(c *[]Dns, limit uint64, offset uint64, pagination bool, params map[string]string) (uint64, error) {
-	query := `SELECT * FROM dns`
+	query := `SELECT * FROM dns_prod`
 	var condition string
 	// Combine where clause
 	clause := false
@@ -61,7 +61,7 @@ func GetAllDns(c *[]Dns, limit uint64, offset uint64, pagination bool, params ma
 	// Check pagination
 	var total uint64
 	if pagination == true {
-		countQuery := "SELECT COUNT(id) FROM dns" + condition
+		countQuery := "SELECT COUNT(id) FROM dns_prod" + condition
 		var totalStr string
 		log.Println(countQuery)
 		err := db.Db.Get(&totalStr, countQuery)
