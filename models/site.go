@@ -31,7 +31,7 @@ func GetTotalSite(params map[string]string) (uint64, error) {
 	var total uint64
 	var totalStr string
 
-	err := db.Db.Get(&totalStr, "SELECT COUNT(id) FROM dns")
+	err := db.Db.Get(&totalStr, "SELECT COUNT(id) FROM dns_prod")
 	if err != nil {
 		log.Println(err)
 		return 0, err

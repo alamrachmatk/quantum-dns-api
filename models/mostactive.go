@@ -24,7 +24,7 @@ type TotalTopMostActiveList struct {
 }
 
 func GetTotalTopMostActiveListQuery(c *[]MostActive, limit uint64) error {
-	query := `SELECT base_domain, count(base_domain) total_most_active from dns GROUP BY base_domain`
+	query := `SELECT base_domain, count(base_domain) total_most_active from dns_prod GROUP BY base_domain`
 
 	// Query limit
 	query += " LIMIT " + strconv.FormatUint(limit, 10)
